@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" prefix="og: http://ogp.me/ns#">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="#">
+    <%= favicon_tag "images/favicon.ico" %>
+
+    <!-- aperçu de ton site avec le lien sur twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content=""> <!-- lien vers une image, celle qui apparaitra sur twitter -->
+    <meta name="twitter:image:alt" content="">
+
+    <!-- aperçu de ton site avec le lien sur fb -->
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content=""> <!-- lien vers une image, celle qui apparaitra sur facebook -->
+    <meta property="og:description" content="">
+    <meta property="og:email" content="">
+    <meta charset="utf-8">
+    <meta name="Content-Type" content="UTF-8">
+    <meta name="Content-Language" content="fr">
+    <meta name="Description" content="">
+    <meta name="Keywords" content="">
+    <meta name="Subject" content="">
+    <meta name="Copyright" content="">
+    <meta name="Author" content="">
+    <meta name="Identifier-Url" content="">
+    <meta name="Revisit-After" content="15 days">
+    <meta name="Robots" content="all">
+    <meta name="Rating" content="general">
+    <meta name="Distribution" content="global">
+    <meta name="Geography" content="Bordeaux">
+    <meta name="Category" content="internet">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title><%= current_page.data.title || "Rxnnn - Hello world" %></title>
+
+    <%= stylesheet_link_tag "normalize", "index", "home", "profile", "projects" %>
+  </head>
+
+    <body>
+      <div id="loading"></div>
+    <% if current_page.path != "index.html" %>
+      <%= image_tag 'LOGO.png', class: "logo", alt: "rxnnn-logo" %>
+    <% end %>
+    <header class="header-index">
+      <div class="hello">
+        <p href="../index.html" id="hello">hello world</p>
+        <hr class="barre-header">
+      </div>
+      <div class="items">
+        <p href="../profile.html" class="bouton" id="profileBtn">profile</p>
+        <p href="../projects.html" class="bouton" id="projectsBtn">projects</p>
+      </div>
+    </header>
+
+    <div class="name">
+      <a href="../index.html">roxane dulhoste</a>
+    </div>
+
+    <%= yield %>
+
+    <% if current_page.path == "index.html" %>
+    <footer class="footer-index">
+    <% elsif current_page.path == "projects.html" %>
+    <footer class="footer-projects">
+    <% else %>
+    <footer>
+    <% end %>
+      <div class="copy">
+        <a href="../index.html">copyright</a>
+        <hr class="barre-footer">
+      </div>
+      <div class="links">
+        <a href="../images/cv.pdf">resume</a>
+        <a href="https://www.instagram.com/rxnnnn__/">instagram</a>
+        <a href="mailto:roxane.dulhoste@gmail.com">mail</a>
+      </div>
+    </footer>
+
+    <%= javascript_include_tag  "all" %>
+
+    <% if current_page.path != "index.html" %>
+      <%= javascript_include_tag "layout" %>
+    <% end %>
+
+    <div class="hidden">
+      <script type="text/javascript">
+        <!--//--><![CDATA[//><!--
+          var images = [];
+          function preload() {
+            for (i = 0; i < preload.arguments.length; i++) {
+              images[i] = new Image()
+              images[i].src = preload.arguments[i]
+            }
+          }
+          preload(
+            "../images/rox1.jpg",
+            "../images/rox2.jpg"
+          )
+        //--><!]]>
+      </script>
+    </div>
+
+  </body>
+</html>

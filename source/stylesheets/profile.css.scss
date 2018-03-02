@@ -1,0 +1,143 @@
+.profile {
+  opacity: 0;
+  transform: translateX(-200px);
+}
+
+.grid, .grid2 {
+  width:80%;
+  height:90%;
+  position: absolute;
+  background-image: url("../images/grid.png");
+  z-index: 0;
+  background-size: cover;
+  left:15%;
+  top:10%;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+}
+
+.grid {
+  z-index: 99999;
+  width: 85%;
+  // top: 6%;
+}
+
+.grid2 {
+  width: 90%;
+  background-image: url("../images/grid2.png") !important;
+  left: -0.1%;
+  z-index: -1;
+  top:3%;
+}
+
+.about {
+  margin-top: 3%;
+  width:fit-content;
+  margin-left: 11vw;
+  img {
+    width:48%;
+    position: absolute;
+  }
+  h1 {
+    position: absolute;
+    margin-top: -2vh;
+    color:white;
+    left:23%;
+    font-size: 4vh;
+    z-index: 9999;
+  }
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  height:fit-content;
+  width:100%;
+  text-align: left;
+  // margin-bottom: 1em;
+  // margin-top: 10%;
+  padding-top: 2%;
+
+  .top, .bottom {
+    width: 50%;
+    margin: 1% 0 2em 28%;
+    background-color: rgba(255,255,255,0.1);
+    padding:1em;
+    z-index: 999999;
+    p {
+      cursor: auto;
+      border :0;
+      font-size: 1.8vh;
+      text-align: justify;
+      line-height: 1.3em;
+      &:hover {
+        border:0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:2000px){
+  .about img {
+    // width:45vw;
+  }
+  .about h1 {
+    // top:-35px ;
+    font-size: 1.6em;
+  }
+  .about-text .top, .about-text .bottom {
+    width:50%;
+    font-size: 1em;
+    // margin-left: 10px;
+  }
+  .grid2 {
+    // left:-1000px;
+  }
+  .grid {
+    // left:-700px;
+  }
+}
+
+@media screen and (max-width:1150px){
+  .about-text .top, .about-text .bottom {
+    margin-left:5vw;
+  }
+}
+
+@media screen and (max-width:600px){
+  .profile_rox{
+    display: none !important;
+  }
+
+.grid {
+  height: 80vh;
+  margin-left: -15vh;
+  margin-top: -10vh;
+  display: none !important;
+}
+
+// .about-text {
+// }
+
+  .top, .bottom {
+    width: 81% !important;
+  }
+
+.top {
+  margin-top: 5% !important;
+}
+ .top p {
+   font-size: 0.8em !important;
+   line-height: 1.5em !important;
+   text-align: justify;
+ }
+
+ .bottom p {
+   font-size: 0.8em !important;
+   line-height: 1.5em !important;
+   text-align: justify;
+
+ }
+
+
+}

@@ -1,0 +1,225 @@
+.projects {
+  opacity: 0;
+  transform: translateX(-200px);
+  color:white;
+  min-height: 50%;
+}
+
+.photos {
+  z-index: 9999999;
+}
+
+.proj-list {
+  align-self: center;
+  margin-left: 8em;
+  z-index: 999999999;
+  font-size: 1.8vh;
+
+
+  li#back {
+    display: none;
+    cursor:pointer;
+    color: #30DEB7;
+  }
+}
+.active {
+  font-size: 2vh;
+  color:#30DEB7 !important;
+}
+.proj-list li {
+  color:white;
+  list-style-type: none;
+  font-weight: bold;
+  margin:1em 1em 1em 2em;
+  width: fit-content;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in;
+  -o-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+.proj-list li::before {
+  content:"";
+  position: absolute;
+  background-color: white;
+  height:2px;
+  margin-left: 5em;
+  margin-top: 0.6em;
+  left:8em;
+  width:50px;
+}
+
+.proj-img {
+  background-image: image-url("fimmi/0.jpg");
+  width: 40vw;
+  height:40vh;
+  box-shadow: 0 0 40px -8px black;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+  filter: contrast(1);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  align-self: center;
+}
+.proj-img:hover {
+  filter:contrast(1.1);
+}
+
+.proj-img.second {
+  opacity: 0.3;
+  position: absolute;
+  left:-300px;
+  top:70px;
+}
+.proj-img.third{
+  opacity: 0.3;
+  position: absolute;
+  left:382px;
+  top:70px;
+  z-index: -1;
+  background-image: url("../images/rox1.jpg");
+  background-color: blue;
+}
+
+.projet-container2 {
+  display: flex;
+  justify-content: space-around;
+  width:90%;
+  margin: 6em auto;
+}
+
+.carousel {
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  width:44%;
+}
+.carousel-list {
+  position: absolute;
+  top:-100px;
+  height:70vh;
+  overflow: scroll;
+}
+.carousel-img {
+  background-color: blue;
+  width: 35vw;
+  height:40vh;
+  box-shadow: 0 0 40px -8px black;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+  filter: contrast(1);
+  margin:0 auto 3em;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.remove {
+  opacity: 0;
+  transform: translateX(2000px);
+  transition-duration: 1s;
+}
+
+.display {
+  opacity: 1;
+  transform: translateX(0);
+  transition-duration: 1s;
+}
+
+.notice {
+  width:50%;
+  background-color: rgba(255,255,255,0.1);
+  padding:1em;
+  z-index: 999999;
+  font-size: 1.8vh;
+  position: absolute;
+  left:-25%;
+  top:-30px;
+  p {
+    text-align: left;
+    cursor: auto;
+    border :0;
+    // text-align: justify;
+    line-height: 1.3em;
+    &:hover {
+      border:0;
+    }
+  }
+  p#btn {
+    cursor:pointer;
+    color: #30DEB7;
+  }
+}
+
+@media screen and (max-width:600px) {
+
+    .grid2{
+      display: none !important;
+    }
+
+    .projet-container2 {
+      flex-direction: column;
+      width:100%;
+      margin:3em 0 8em;
+    }
+    .proj-list {
+      margin-left: -38vh;
+      text-align: left;
+    }
+
+    .proj-list li {
+      // margin:1em auto;
+      // text-align: center;
+    }
+    .proj-list li::before{
+      display: none;
+    }
+    .proj-list ul {
+      padding:0;
+    }
+
+    .photos.display {
+      margin:2em auto;
+      width: 100%;
+    }
+
+    .proj-img {
+      margin: 1em auto;
+      width: 350px;
+      margin-top: -8vh;
+    }
+
+    .proj-img.second {
+      left:0;
+      width: 350px;
+
+    }
+
+    .proj-img.third {
+      left:0;
+      width: 350px;
+
+
+    }
+
+    .notice {
+      right:0;
+      left:auto;
+      width:60%;
+      margin-top: -30vh;
+    }
+
+    .carousel-list {
+      top:270px;
+      height:30vh;
+      width: 350px;
+    }
+
+    .carousel-img {
+      width: 100%;
+      margin: auto;
+    }
+}
